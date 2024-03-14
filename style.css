@@ -1,0 +1,135 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+}
+
+.light {
+    --bgcolor: #D6D6D6;
+    --btncolor: #EC8D7B;
+    --bgconvertor: #F3C3D0;
+    --textcolor: #2C2B31;
+}
+
+ :root{
+    --textcolor: #D6D6D6;
+    --bgcolor: #2C2B31;
+    --btncolor: #EC8D7B;
+    --bgconvertor: #4F4E53;
+}
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.convertor {
+
+    width: 50vw;
+    height: 55vh;
+    padding-top: 20px;
+    position: absolute;
+    color: var(--textcolor);
+    background-color: var(--bgconvertor);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#amount {
+    display: block;
+    width: 80%;
+    background-color: var(--bgconvertor);
+    margin: 0 auto;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    padding-left: 5px;
+    color: var(--textcolor);
+    margin-top: 5px;
+}
+
+.selectors,
+.labels {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    background-color: var(--bgconvertor);
+    justify-content: space-between;
+}
+
+.labels {
+    margin-top: 10%;
+}
+
+#selector,
+#selector2 {
+    width: 60px;
+    height: 35px;
+    cursor: pointer;
+    color: var(--textcolor);
+    border: none;
+    background-color: var(--bgconvertor);
+}
+
+#from-div {
+    width: 96px;
+    display: flex;
+    background-color: var(--bgconvertor);
+}
+
+#label-to {
+    margin-right: 80px;
+    margin-bottom: 10px;
+    background-color: var(--bgconvertor);
+}
+
+button {
+    display: block;
+    width: 60%;
+    margin: 7% auto;
+    font-weight: bold;
+    height: 30px;border: 1px solid gray;
+    cursor: pointer;
+    color: var(--textcolor);
+    background-color: var(--btncolor);
+}
+
+#label-amount {
+    margin-left: 10%;
+    margin-top: 40px;
+    background-color: var(--bgconvertor);
+    margin-bottom: 40px;
+}
+
+#inp2 {
+    width: 20%;
+    text-align: center;
+    height: 40px;
+    margin: 0% auto;
+    background-color: var(--bgconvertor);
+    display: block;
+    color: var(--textcolor);
+    border: 1px solid gray;
+}
+
+#exchangeRate,
+img,
+#label-from,
+i {
+    background-color: var(--bgconvertor);
+}
+footer{
+    bottom: 0%;
+    position: absolute;
+    width: 100%;
+}
+footer,a{
+    text-align: center;
+    text-decoration: none;
+
+}
