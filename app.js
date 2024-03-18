@@ -57,7 +57,7 @@ function flag() {
     flagImgs[1].setAttribute("src", newFlagURL2);
 }
 async function convert() {
-    var amount = document.getElementById("amount").value
+    let amount = document.getElementById("amount").value
     const baseurl = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_58wDFv6dwuOqCbxYE9tBRfhaX2vJwZBA3mnqUoZE"
     const currencies = document.getElementById("selector2").value;
     const base_currency = document.getElementById("selector").value;
@@ -65,19 +65,41 @@ async function convert() {
     let response = await fetch(url);
     let data = await response.json();
     let rate = data.data[currencies];
-    var inp2 = document.getElementById("inp2");
+    let inp2 = document.getElementById("inp2");
+    if(amount<1 ){
+        amount=1 
+        inp2.value = (1 * rate).toFixed(4)
+        document.getElementById("amount").value=1
+    }
     inp2.value = (amount * rate).toFixed(4)
     document.getElementById("exchangeRate").innerText = "* 1 " + base_currency + " = " + rate.toFixed(4) + " " + currencies;
 
 }
 
 
-function darkmode(){
-    var checkbox= document.getElementById("darkmode");
-    if(checkbox.checked){
-        document.body.classList.add("light");
+function darkmode() {
+    let checkbox = document.getElementById("checkbox");
+    if (checkbox.checked) {
+        document.body.classList.add("dark");
+        document.getElementById("sun").style.display = "unset";
+        document.getElementById("moon").style.display = "none";
+
     }
-    else{
-        document.body.classList.remove("light");
+    else {
+        document.body.classList.remove("dark");
+        document.getElementById("sun").style.display = "none";
+        document.getElementById("moon").style.display = "unset";
+
     }
+}
+darkmode()
+
+let swap =  ()=>{
+    const selector1 = document.getElementById("selector");
+    const selector2 = document.getElementById("selector2");
+    const selectedCurrency1 = selector1.value;
+    const selectedCurrency2 = selector2.value;
+    selector1.value = selectedCurrency2;
+    selector2.value = selectedCurrency1;
+    flag()
 }
